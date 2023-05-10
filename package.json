@@ -1,0 +1,24 @@
+{
+  "name": "docker_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjal-k12/Docker-Node.js-Mongodb-Redis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranjal-k12/Docker-Node.js-Mongodb-Redis/issues"
+  },
+  "homepage": "https://github.com/pranjal-k12/Docker-Node.js-Mongodb-Redis#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
