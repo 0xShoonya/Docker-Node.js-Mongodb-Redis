@@ -1,8 +1,20 @@
 version: "3.9"
 services:
   node-app:
+    image: node
     build: .
     ports:
       - "3000:3000"
     environment:
       - PORT=3000
+
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=honey
+      - MONGO_INITDB_ROOT_PASSWORD=mypassword
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:
