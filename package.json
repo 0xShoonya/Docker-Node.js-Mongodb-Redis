@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/pranjal-k12/Docker-Node.js-Mongodb-Redis#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22"

@@ -20,7 +20,6 @@ exports.getAllPosts = async (req, res, next) => {
 exports.getSinglePost = async (req, res, next) => {
   try {
     const post = await Post.findById(req.params.id).select("title body");
-    console.log(post);
     res.status(200).json({
       status: "sucess",
       data: {
