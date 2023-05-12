@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const redis = require("redis");
 const session = require("express-session");
 const RedisStore = require("connect-redis").default;
@@ -44,6 +45,7 @@ const userRouter = require("./routes/userRoutes");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
 
@@ -59,6 +61,8 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
+app.enable("trust proxy");
+
 app.use(
   session({
     store: store,
@@ -73,8 +77,9 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
+app.get("/api/v1", (req, res) => {
   res.send("<h2>Hi There</h2>");
+  console.log("yeah it ran!");
 });
 
 //localhost:3000/api/v1/posts/
