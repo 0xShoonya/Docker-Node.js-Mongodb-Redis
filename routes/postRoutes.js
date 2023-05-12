@@ -1,4 +1,5 @@
 const express = require("express");
+const protect = require("../middlewares/authMiddleware");
 const {
   getAllPosts,
   createPost,
@@ -9,9 +10,13 @@ const {
 
 const router = express.Router();
 
-//localhost:3000/
-router.route("/").get(getAllPosts).post(createPost);
+//localhost:3000/s
+router.route("/").get(protect, getAllPosts).post(protect, createPost);
 
-router.route("/:id").get(getSinglePost).put(updatePost).delete(deletePost);
+router
+  .route("/:id")
+  .get(protect, getSinglePost)
+  .put(protect, updatePost)
+  .delete(protect, deletePost);
 
 module.exports = router;
