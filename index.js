@@ -12,13 +12,13 @@ const {
   MONGO_PORT,
   SESSION_SECRET,
   REDIS_URL,
-  REDIS_PORT,
+  REDIS_URL,
 } = require("./config/config");
 
 let redisClient = redis.createClient({
   socket: {
-    host: "redis",
-    port: 6379,
+    host: " REDIS_URL",
+    port: REDIS_URL,
   },
 });
 
