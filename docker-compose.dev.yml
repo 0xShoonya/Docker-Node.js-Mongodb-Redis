@@ -18,7 +18,6 @@ services:
       - MONGO_PASSWORD=mypassword
       - SESSION_SECRET=myredissecret
       
-    command: npm run dev
   
   mongo:
     environment:
