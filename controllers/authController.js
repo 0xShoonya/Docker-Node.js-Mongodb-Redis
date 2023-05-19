@@ -42,7 +42,6 @@ exports.login = async (req, res) => {
 
     if (isMatched) {
       console.log(req.session);
-      console.log("HEllloooooo");
       req.session.user = user;
       res.status(200).json({
         status: "success",
